@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxj6v60nvfgg8" path="res://assets/tilemaps/walls/wall.png" id="3_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://clr7o1uy75b3p" path="res://scenes/player/player.tscn" id="3_yyfjg"]
 [ext_resource type="Script" uid="uid://ss022f3gt6p5" path="res://scripts/state_machines/game_state_machine/game_states/play_state.gd" id="4_6q06x"]
+[ext_resource type="Texture2D" uid="uid://ckdspsqjtskfp" path="res://assets/tilemaps/paint/paint.png" id="4_blune"]
 [ext_resource type="Script" uid="uid://b2j0u8g8idf04" path="res://scripts/ui/pause_menu/pause_menu.gd" id="6_ow5a4"]
 [ext_resource type="Texture2D" uid="uid://dvabdun4d0cbo" path="res://assets/tilemaps/ground/ground.png" id="7_hujxm"]
 [ext_resource type="Script" uid="uid://eau5olradqj8" path="res://scripts/components/level_log/level_log.gd" id="10_a8run"]
@@ -34,6 +35,15 @@ custom_data_layer_0/name = "walls"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_a8run")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_th5th"]
+texture = ExtResource("4_blune")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ypy33"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_th5th")
+
 [sub_resource type="Gradient" id="Gradient_ecg72"]
 colors = PackedColorArray(0.6127906, 0.4126015, 0.42459592, 1, 0.3760335, 0.4925661, 0.7094867, 1)
 
@@ -57,12 +67,22 @@ tile_map_data = PackedByteArray("AAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAA
 tile_set = SubResource("TileSet_lynmg")
 metadata/_edit_lock_ = true
 
+[node name="Paint" type="TileMapLayer" parent="Tilemaps" unique_id=117412416]
+tile_set = SubResource("TileSet_ypy33")
+metadata/_edit_lock_ = true
+
 [node name="Player" parent="." unique_id=1106888986 instance=ExtResource("3_yyfjg")]
 position = Vector2(208, 208)
 
 [node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground", "walls")]
 ground = NodePath("../../Tilemaps/Ground")
 walls = NodePath("../../Tilemaps/Walls")
+
+[node name="Paintbrush" parent="." unique_id=677155198 node_paths=PackedStringArray("player") instance=ExtResource("11_ouso4")]
+player = NodePath("../Player")
+
+[node name="OrbiterComponent" parent="Paintbrush" index="1" unique_id=1447300622 node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
 
 [node name="GameStateMachine" type="Node" parent="." unique_id=1331143807 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_hyk8p")
@@ -215,12 +235,6 @@ value = 1.0
 
 [node name="LevelLog" type="Node" parent="." unique_id=654758267]
 script = ExtResource("10_a8run")
-
-[node name="Paintbrush" parent="." unique_id=677155198 instance=ExtResource("11_ouso4")]
-
-[node name="OrbiterComponent" parent="Paintbrush" index="1" unique_id=1447300622 node_paths=PackedStringArray("player")]
-player = NodePath("../../Player")
-orbit_distance = null
 
 [connection signal="pressed" from="MainMenu/MainMenuButtons/StartGame" to="MainMenu" method="_on_start_game_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
