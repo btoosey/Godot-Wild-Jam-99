@@ -74,9 +74,10 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." unique_id=1106888986 instance=ExtResource("3_yyfjg")]
 position = Vector2(208, 208)
 
-[node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground", "walls")]
+[node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground", "walls", "paint")]
 ground = NodePath("../../Tilemaps/Ground")
 walls = NodePath("../../Tilemaps/Walls")
+paint = NodePath("../../Tilemaps/Paint")
 
 [node name="Paintbrush" parent="." unique_id=677155198 node_paths=PackedStringArray("player") instance=ExtResource("11_ouso4")]
 player = NodePath("../Player")

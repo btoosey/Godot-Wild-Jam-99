@@ -49,4 +49,3 @@ func can_paint(cell: Vector2i) -> bool:
 func paint_cell(cell: Vector2i) -> void:
 	paint.set_cell(cell, 0, Vector2i.ZERO)
 	cell_painted.emit(cell)
-	print("painted: ", cell)

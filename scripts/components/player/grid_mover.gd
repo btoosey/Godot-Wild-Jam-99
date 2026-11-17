@@ -8,6 +8,7 @@ signal player_moved
 @export var player: CharacterBody2D
 @export var ground: TileMapLayer
 @export var walls: TileMapLayer
+@export var paint: TileMapLayer
 
 @onready var movement_marker: Marker2D = $MovementMarker
 
@@ -75,7 +76,7 @@ func _process_input() -> void:
 func _check_direction_clear(pos: Vector2) -> bool:
 	var target_tile := walls.local_to_map(walls.to_local(pos))
 	var target_tile_data: TileData = walls.get_cell_tile_data(target_tile)
-	if target_tile_data != null and target_tile_data.get_custom_data('walls'):
+	if target_tile_data != null and target_tile_data.get_custom_data('walls') or paint.get_cell_tile_data(target_tile):
 		return false
 	else:
 		return true
