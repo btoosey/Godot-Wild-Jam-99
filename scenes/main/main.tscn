@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bgrglm1aemu1k" path="res://scenes/main/main.gd" id="1_k2fmo"]
 [ext_resource type="Script" uid="uid://b4au8pmkhwese" path="res://scripts/state_machines/game_state_machine/game_states/main_menu_state.gd" id="2_iuonh"]
 [ext_resource type="Script" uid="uid://dcfr33b6je7d4" path="res://scripts/ui/main_menu/main_menu.gd" id="2_l3cfh"]
+[ext_resource type="Texture2D" uid="uid://cxj6v60nvfgg8" path="res://assets/tilemaps/walls/wall.png" id="3_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://clr7o1uy75b3p" path="res://scenes/player/player.tscn" id="3_yyfjg"]
 [ext_resource type="Script" uid="uid://ss022f3gt6p5" path="res://scripts/state_machines/game_state_machine/game_states/play_state.gd" id="4_6q06x"]
 [ext_resource type="Script" uid="uid://b2j0u8g8idf04" path="res://scripts/ui/pause_menu/pause_menu.gd" id="6_ow5a4"]
@@ -18,6 +19,18 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_ow5a4"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_yyfjg")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8run"]
+texture = ExtResource("3_b1x3f")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+
+[sub_resource type="TileSet" id="TileSet_lynmg"]
+tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "walls"
+custom_data_layer_0/type = 1
+sources/1 = SubResource("TileSetAtlasSource_a8run")
 
 [sub_resource type="Gradient" id="Gradient_ecg72"]
 colors = PackedColorArray(0.6127906, 0.4126015, 0.42459592, 1, 0.3760335, 0.4925661, 0.7094867, 1)
@@ -37,11 +50,17 @@ tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAABAAA
 tile_set = SubResource("TileSet_ow5a4")
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." unique_id=1106888986 instance=ExtResource("3_yyfjg")]
-position = Vector2(80, 80)
+[node name="Walls" type="TileMapLayer" parent="Tilemaps" unique_id=141337369]
+tile_map_data = PackedByteArray("AAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAQAAAAAAAAAFAAkAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAAOAAQAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAQAAAAAAAAAOAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAIAAYAAQAAAAAAAAAMAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_lynmg")
+metadata/_edit_lock_ = true
 
-[node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground")]
+[node name="Player" parent="." unique_id=1106888986 instance=ExtResource("3_yyfjg")]
+position = Vector2(208, 208)
+
+[node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground", "walls")]
 ground = NodePath("../../Tilemaps/Ground")
+walls = NodePath("../../Tilemaps/Walls")
 
 [node name="GameStateMachine" type="Node" parent="." unique_id=1331143807 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_hyk8p")

@@ -6,6 +6,7 @@ extends Node2D
 @export var grid_size: Vector2
 @export var player: CharacterBody2D
 @export var ground: TileMapLayer
+@export var walls: TileMapLayer
 
 @onready var movement_marker: Marker2D = $MovementMarker
 
@@ -31,6 +32,8 @@ func _process(delta: float) -> void:
 
 	if is_moving:
 		_advance(delta)
+
+	if is_moving:
 		return
 
 	if held_directions.is_empty():
@@ -60,13 +63,17 @@ func _advance(delta: float) -> void:
 
 
 func _process_input() -> void:
-	movement_marker.global_position = player.global_position
-	if _check_direction_clear():
-		target_position = player.global_position + (direction * grid_size)
+	movement_marker.global_position = player.global_position + (direction * grid_size)
+
+	if _check_direction_clear(movement_marker.global_position):
+		target_position = movement_marker.global_position
 		is_moving = true
+
+
+func _check_direction_clear(pos: Vector2) -> bool:
+	var target_tile := walls.local_to_map(walls.to_local(pos))
+	var target_tile_data: TileData = walls.get_cell_tile_data(target_tile)
+	if target_tile_data != null and target_tile_data.get_custom_data('walls'):
+		return false
 	else:
-		print("can't move")
-
-
-func _check_direction_clear() -> bool:
-	return true
+		return true
