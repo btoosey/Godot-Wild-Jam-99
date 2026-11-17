@@ -62,7 +62,6 @@ func _advance(delta: float) -> void:
 	if player.global_position == target_position:
 		player_moved.emit()
 		is_moving = false
-		
 
 
 func _process_input() -> void:

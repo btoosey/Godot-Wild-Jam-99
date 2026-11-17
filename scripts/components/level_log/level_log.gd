@@ -1,5 +1,7 @@
 extends Node
 
+@onready var paint: TileMapLayer = $"../Tilemaps/Paint"
+
 var allow_undo := true
 var turn_number := 0
 var level_log := []
@@ -19,15 +21,19 @@ func _undo() -> void:
 
 	var player: Player = get_tree().get_nodes_in_group("players")[0]
 	player.global_position = level_log[-2][0]
+	paint.erase_cell(level_log[-1][1])
+
 	level_log.pop_back()
 	turn_number -= 1
 
 
-func log_level_state() -> void:
+func log_level_state(cell: Vector2i = Vector2i.ZERO) -> void:
 	var new_state := []
 
 	for player: CharacterBody2D in get_tree().get_nodes_in_group("players"):
 		new_state.append(player.global_position)
+
+	new_state.append(cell)
 
 	if level_log.is_empty() or level_log[-1] != new_state:
 		level_log.append(new_state)

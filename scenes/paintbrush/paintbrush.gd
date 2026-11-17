@@ -1,5 +1,7 @@
 class_name Paintbrush extends Node2D
 
+signal cell_painted(cell: Vector2i)
+
 @export var player: Player
 
 @onready var walls: TileMapLayer = $"../Tilemaps/Walls"
@@ -8,6 +10,7 @@ class_name Paintbrush extends Node2D
 var current_cell: Vector2i = Vector2i.ZERO
 var paint_button_held: bool = false
 
+
 func _process(_delta: float) -> void:
 	var hovered_cell: Vector2i = paint.local_to_map(paint.to_local(global_position))
 
@@ -15,7 +18,8 @@ func _process(_delta: float) -> void:
 		return
 	else:
 		current_cell = hovered_cell
-		try_paint()
+		if not player.grid_mover.is_moving:
+			try_paint()
 
 
 func _input(event: InputEvent) -> void:
@@ -32,8 +36,7 @@ func try_paint() -> void:
 		return
 
 	if can_paint(current_cell):
-		paint.set_cell(current_cell, 0, Vector2i.ZERO)
-		print("painted: ", current_cell)
+		paint_cell(current_cell)
 
 
 func can_paint(cell: Vector2i) -> bool:
@@ -41,3 +44,9 @@ func can_paint(cell: Vector2i) -> bool:
 		return false
 
 	return true
+
+
+func paint_cell(cell: Vector2i) -> void:
+	paint.set_cell(cell, 0, Vector2i.ZERO)
+	cell_painted.emit(cell)
+	print("painted: ", cell)
