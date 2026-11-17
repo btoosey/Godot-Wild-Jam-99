@@ -1,6 +1,7 @@
 class_name GridMover
 extends Node2D
 
+signal player_moved
 
 @export var speed: float
 @export var grid_size: Vector2
@@ -59,7 +60,9 @@ func _advance(delta: float) -> void:
 	player.global_position = player.global_position.move_toward(target_position, step)
 
 	if player.global_position == target_position:
+		player_moved.emit()
 		is_moving = false
+		
 
 
 func _process_input() -> void:
