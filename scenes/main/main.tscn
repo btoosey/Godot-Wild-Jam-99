@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://b2j0u8g8idf04" path="res://scripts/ui/pause_menu/pause_menu.gd" id="6_ow5a4"]
 [ext_resource type="Texture2D" uid="uid://dvabdun4d0cbo" path="res://assets/tilemaps/ground/ground.png" id="7_hujxm"]
 [ext_resource type="Script" uid="uid://eau5olradqj8" path="res://scripts/components/level_log/level_log.gd" id="10_a8run"]
+[ext_resource type="PackedScene" uid="uid://bmi7nf3kdb3f7" path="res://scenes/paintbrush/paintbrush.tscn" id="11_ouso4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yyfjg"]
 texture = ExtResource("7_hujxm")
@@ -215,6 +216,12 @@ value = 1.0
 [node name="LevelLog" type="Node" parent="." unique_id=654758267]
 script = ExtResource("10_a8run")
 
+[node name="Paintbrush" parent="." unique_id=677155198 instance=ExtResource("11_ouso4")]
+
+[node name="OrbiterComponent" parent="Paintbrush" index="1" unique_id=1447300622 node_paths=PackedStringArray("player")]
+player = NodePath("../../Player")
+orbit_distance = null
+
 [connection signal="pressed" from="MainMenu/MainMenuButtons/StartGame" to="MainMenu" method="_on_start_game_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="value_changed" from="PauseMenu/VBoxContainer/AudioSliders/MasterSlider/MasterSlider" to="PauseMenu" method="_on_master_slider_value_changed"]
@@ -222,3 +229,4 @@ script = ExtResource("10_a8run")
 [connection signal="value_changed" from="PauseMenu/VBoxContainer/AudioSliders/SFXSlider/SFXSlider" to="PauseMenu" method="_on_sfx_slider_value_changed"]
 
 [editable path="Player"]
+[editable path="Paintbrush"]
