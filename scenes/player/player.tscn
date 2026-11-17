@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://clr7o1uy75b3p"]
+
+[ext_resource type="Script" uid="uid://ciaxnkmwk6gys" path="res://scripts/components/player/grid_mover.gd" id="1_8afob"]
+[ext_resource type="Script" uid="uid://cd7xcpyhx806m" path="res://scenes/player/player.gd" id="1_dovo2"]
+
+[sub_resource type="Gradient" id="Gradient_x7p2l"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dovo2"]
+gradient = SubResource("Gradient_x7p2l")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lynmg"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D" unique_id=1106888986 groups=["players"]]
+script = ExtResource("1_dovo2")
+
+[node name="Visuals" type="CanvasGroup" parent="." unique_id=1882564382]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=738659998]
+texture = SubResource("GradientTexture2D_dovo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979325154]
+shape = SubResource("RectangleShape2D_lynmg")
+
+[node name="GridMover" type="Node2D" parent="." unique_id=1246385282 node_paths=PackedStringArray("player")]
+script = ExtResource("1_8afob")
+speed = 180.0
+grid_size = Vector2(32, 32)
+player = NodePath("..")
+
+[node name="MovementMarker" type="Marker2D" parent="GridMover" unique_id=1282810239]
