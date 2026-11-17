@@ -37,7 +37,7 @@ func try_paint() -> void:
 
 
 func can_paint(cell: Vector2i) -> bool:
-	if paint.get_cell_tile_data(cell):
+	if paint.get_cell_tile_data(cell) or walls.get_cell_tile_data(cell):
 		return false
 
 	return true
