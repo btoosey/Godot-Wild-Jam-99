@@ -14,5 +14,3 @@ const MASK_TO_ATLAS := {
 	RED | BLUE: Vector2i(5, 0),
 	RED | YELLOW | BLUE: Vector2i(6, 0)
 }
-
-var cell_paint_state := {}
