@@ -4,6 +4,7 @@ signal cell_painted(cell: Vector2i)
 
 @export var player: Player
 
+@onready var palette: Node2D = $Palette
 @onready var walls: TileMapLayer = $"../Tilemaps/Walls"
 @onready var paint: TileMapLayer = $"../Tilemaps/Paint"
 
@@ -40,12 +41,18 @@ func try_paint() -> void:
 
 
 func can_paint(cell: Vector2i) -> bool:
-	if paint.get_cell_tile_data(cell) or walls.get_cell_tile_data(cell):
+	if walls.get_cell_tile_data(cell):
 		return false
 
 	return true
 
 
 func paint_cell(cell: Vector2i) -> void:
-	paint.set_cell(cell, 0, Vector2i.ZERO)
+	var old_mask: int = palette.cell_paint_state.get(cell, 0)
+	var new_mask: int = old_mask | palette.current_paint_colour
+	if old_mask == new_mask:
+		return
+
+	palette.cell_paint_state[cell] = new_mask
+	paint.set_cell(cell, 0, palette.MASK_TO_ATLAS[new_mask])
 	cell_painted.emit(cell)

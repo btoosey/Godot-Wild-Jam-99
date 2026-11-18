@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d04jak1mjbxv5" path="res://scripts/components/paintbrush/orbiter_component.gd" id="1_cunj8"]
 [ext_resource type="Script" uid="uid://7342oojnfrt2" path="res://scenes/paintbrush/paintbrush.gd" id="1_y05g2"]
+[ext_resource type="Script" uid="uid://deod6ldc4livn" path="res://scenes/paintbrush/palette.gd" id="3_iig8r"]
 
 [sub_resource type="Gradient" id="Gradient_b4ab7"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -22,3 +23,6 @@ texture = SubResource("GradientTexture2D_lynmg")
 [node name="OrbiterComponent" type="Node2D" parent="." unique_id=1447300622 node_paths=PackedStringArray("target")]
 script = ExtResource("1_cunj8")
 target = NodePath("..")
+
+[node name="Palette" type="Node2D" parent="." unique_id=1122882069]
+script = ExtResource("3_iig8r")
