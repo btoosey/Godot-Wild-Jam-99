@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dvabdun4d0cbo" path="res://assets/tilemaps/ground/ground.png" id="7_hujxm"]
 [ext_resource type="Script" uid="uid://eau5olradqj8" path="res://scripts/components/level_log/level_log.gd" id="10_a8run"]
 [ext_resource type="PackedScene" uid="uid://bmi7nf3kdb3f7" path="res://scenes/paintbrush/paintbrush.tscn" id="11_ouso4"]
+[ext_resource type="Script" uid="uid://blid5bynf8utk" path="res://scripts/ui/game_ui/layer_buttons/layer_buttons.gd" id="13_th5th"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yyfjg"]
 texture = ExtResource("7_hujxm")
@@ -73,7 +74,19 @@ tile_map_data = PackedByteArray("AAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAA
 tile_set = SubResource("TileSet_lynmg")
 metadata/_edit_lock_ = true
 
-[node name="Paint" type="TileMapLayer" parent="Tilemaps" unique_id=117412416]
+[node name="PaintRed" type="TileMapLayer" parent="Tilemaps" unique_id=117412416]
+tile_set = SubResource("TileSet_ypy33")
+metadata/_edit_lock_ = true
+
+[node name="PaintYellow" type="TileMapLayer" parent="Tilemaps" unique_id=488521288]
+tile_set = SubResource("TileSet_ypy33")
+metadata/_edit_lock_ = true
+
+[node name="PaintBlue" type="TileMapLayer" parent="Tilemaps" unique_id=18329694]
+tile_set = SubResource("TileSet_ypy33")
+metadata/_edit_lock_ = true
+
+[node name="PaintResult" type="TileMapLayer" parent="Tilemaps" unique_id=344764733]
 tile_set = SubResource("TileSet_ypy33")
 metadata/_edit_lock_ = true
 
@@ -83,7 +96,7 @@ position = Vector2(208, 208)
 [node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground", "walls", "paint")]
 ground = NodePath("../../Tilemaps/Ground")
 walls = NodePath("../../Tilemaps/Walls")
-paint = NodePath("../../Tilemaps/Paint")
+paint = NodePath("../../Tilemaps/PaintRed")
 
 [node name="Paintbrush" parent="." unique_id=677155198 node_paths=PackedStringArray("player") instance=ExtResource("11_ouso4")]
 player = NodePath("../Player")
@@ -245,11 +258,38 @@ script = ExtResource("10_a8run")
 paintbrush = NodePath("../Paintbrush")
 player = NodePath("../Player")
 
+[node name="LevelUI" type="CanvasLayer" parent="." unique_id=2134396191]
+
+[node name="LayerButtons" type="VBoxContainer" parent="LevelUI" unique_id=1711743782]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.5
+offset_right = 59.0
+offset_bottom = 50.5
+grow_vertical = 2
+script = ExtResource("13_th5th")
+
+[node name="Red" type="Button" parent="LevelUI/LayerButtons" unique_id=1809983648]
+layout_mode = 2
+text = "Red"
+
+[node name="Yellow" type="Button" parent="LevelUI/LayerButtons" unique_id=90260801]
+layout_mode = 2
+text = "Yellow"
+
+[node name="Blue" type="Button" parent="LevelUI/LayerButtons" unique_id=707571691]
+layout_mode = 2
+text = "Blue"
+
 [connection signal="pressed" from="MainMenu/MainMenuButtons/StartGame" to="MainMenu" method="_on_start_game_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="value_changed" from="PauseMenu/VBoxContainer/AudioSliders/MasterSlider/MasterSlider" to="PauseMenu" method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="PauseMenu/VBoxContainer/AudioSliders/MusicSlider/MusicSlider" to="PauseMenu" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="PauseMenu/VBoxContainer/AudioSliders/SFXSlider/SFXSlider" to="PauseMenu" method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="LevelUI/LayerButtons/Red" to="LevelUI/LayerButtons" method="_on_red_pressed"]
+[connection signal="pressed" from="LevelUI/LayerButtons/Yellow" to="LevelUI/LayerButtons" method="_on_yellow_pressed"]
+[connection signal="pressed" from="LevelUI/LayerButtons/Blue" to="LevelUI/LayerButtons" method="_on_blue_pressed"]
 
 [editable path="Player"]
 [editable path="Paintbrush"]
