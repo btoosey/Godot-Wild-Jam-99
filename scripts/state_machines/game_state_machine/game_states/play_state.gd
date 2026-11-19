@@ -5,3 +5,7 @@ extends GameState
 
 func enter() -> void:
 	pause_menu.pausable = true
+
+
+func exit() -> void:
+	pause_menu.pausable = false
