@@ -15,10 +15,6 @@ func reload_level() -> void:
 	instantiate_level()
 
 
-func _on_reload_level() -> void:
-	reload_level()
-
-
 func clear_current_level() -> void:
 	if level.get_child_count() > 0:
 		var lv = level.get_child(0)

@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var game_state_machine: GameStateMachine = $"../GameStateMachine" as GameStateMachine
 @onready var resume_button: Button = $VBoxContainer/ResumeButton
+@onready var level_loader_reloader: Node = $"../LevelLoaderReloader"
 
 var paused := false
 var pausable := false
@@ -31,6 +32,11 @@ func pause_game() -> void:
 
 
 func _on_resume_button_pressed() -> void:
+	unpause_game()
+
+
+func _on_restart_level_button_pressed() -> void:
+	level_loader_reloader.reload_level()
 	unpause_game()
 
 
