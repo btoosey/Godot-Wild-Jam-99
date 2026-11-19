@@ -3,8 +3,6 @@ extends Node
 @export var paintbrush: Paintbrush
 @export var player: Player
 
-@onready var paint: TileMapLayer = $"../Tilemaps/Paint"
-
 var allow_undo := true
 var turn_number := 0
 var level_log: Array[Dictionary] = []
