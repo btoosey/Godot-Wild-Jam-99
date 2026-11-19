@@ -91,12 +91,12 @@ tile_set = SubResource("TileSet_ypy33")
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=1106888986 instance=ExtResource("3_yyfjg")]
+z_index = 2
 position = Vector2(208, 208)
 
-[node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground", "walls", "paint")]
+[node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground", "walls")]
 ground = NodePath("../../Tilemaps/Ground")
 walls = NodePath("../../Tilemaps/Walls")
-paint = NodePath("../../Tilemaps/PaintRed")
 
 [node name="Paintbrush" parent="." unique_id=677155198 node_paths=PackedStringArray("player") instance=ExtResource("11_ouso4")]
 z_index = 2
