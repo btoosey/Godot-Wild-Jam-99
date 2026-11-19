@@ -162,6 +162,10 @@ text = "Resume"
 layout_mode = 2
 text = "Restart Level"
 
+[node name="LevelSelectButton" type="Button" parent="PauseMenu/VBoxContainer" unique_id=1530191831]
+layout_mode = 2
+text = "Level Select"
+
 [node name="AudioSliders" type="VBoxContainer" parent="PauseMenu/VBoxContainer" unique_id=670476256]
 layout_mode = 2
 
@@ -220,6 +224,7 @@ script = ExtResource("8_yyfjg")
 [connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 1" to="LevelSelect/VBoxContainer/Levels/Level 1" method="_on_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/RestartLevelButton" to="PauseMenu" method="_on_restart_level_button_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/LevelSelectButton" to="PauseMenu" method="_on_level_select_button_pressed"]
 [connection signal="value_changed" from="PauseMenu/VBoxContainer/AudioSliders/MasterSlider/MasterSlider" to="PauseMenu" method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="PauseMenu/VBoxContainer/AudioSliders/MusicSlider/MusicSlider" to="PauseMenu" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="PauseMenu/VBoxContainer/AudioSliders/SFXSlider/SFXSlider" to="PauseMenu" method="_on_sfx_slider_value_changed"]

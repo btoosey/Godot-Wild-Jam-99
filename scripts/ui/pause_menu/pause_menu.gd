@@ -40,6 +40,12 @@ func _on_restart_level_button_pressed() -> void:
 	unpause_game()
 
 
+func _on_level_select_button_pressed() -> void:
+	game_state_machine._on_transition_requested(game_state_machine.current_state, GameState.State.LEVEL_SELECT)
+	unpause_game()
+	level_loader_reloader.clear_current_level()
+
+
 func _on_master_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
 
