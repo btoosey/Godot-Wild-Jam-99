@@ -2,7 +2,6 @@ class_name Paintbrush extends Node2D
 
 signal cell_painted
 
-@export var level_data: LevelData
 @export var player: Player
 @export_range(0.0, 1.0) var inactive_layer_alpha: float = 0.3
 
@@ -163,7 +162,7 @@ func restore_paint(snapshot: Dictionary) -> void:
 
 
 func check_solution() -> void:
-	if paint_state == level_data.solution:
+	if paint_state == get_parent().level_data.solution:
 		print("win!")
 	else:
 		print("lose!")

@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var level_data: LevelData
+
 @onready var level_log: Node = $LevelLog
 @onready var paintbrush: Paintbrush = $Paintbrush
 @onready var layer_buttons: VBoxContainer = $LevelUI/LayerButtons

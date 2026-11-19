@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bihqm1ntlmqo1"]
 
-[ext_resource type="Script" uid="uid://bgyuep0tnh5o8" path="res://scenes/level/level.gd" id="1_nwtso"]
+[ext_resource type="Script" uid="uid://bgyuep0tnh5o8" path="res://scenes/levels/level.gd" id="1_nwtso"]
 [ext_resource type="Texture2D" uid="uid://dvabdun4d0cbo" path="res://assets/tilemaps/ground/ground.png" id="2_4xspe"]
 [ext_resource type="Texture2D" uid="uid://cxj6v60nvfgg8" path="res://assets/tilemaps/walls/wall.png" id="3_qywxx"]
 [ext_resource type="Texture2D" uid="uid://ckdspsqjtskfp" path="res://assets/tilemaps/paint/paint.png" id="4_03857"]
@@ -49,6 +49,7 @@ sources/0 = SubResource("TileSetAtlasSource_th5th")
 
 [node name="Level" type="Node2D" unique_id=613229554]
 script = ExtResource("1_nwtso")
+level_data = ExtResource("7_h0bna")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=557538249]
 
@@ -88,7 +89,6 @@ walls = NodePath("../../Tilemaps/Walls")
 
 [node name="Paintbrush" parent="." unique_id=677155198 node_paths=PackedStringArray("player") instance=ExtResource("6_00xju")]
 z_index = 2
-level_data = ExtResource("7_h0bna")
 player = NodePath("../Player")
 
 [node name="OrbiterComponent" parent="Paintbrush" index="1" unique_id=1447300622 node_paths=PackedStringArray("player")]
