@@ -2,6 +2,7 @@ class_name Paintbrush extends Node2D
 
 signal cell_painted
 
+@export var level_data: LevelData
 @export var player: Player
 @export_range(0.0, 1.0) var inactive_layer_alpha: float = 0.3
 
@@ -127,6 +128,8 @@ func set_colour(primary: int) -> void:
 
 func set_combined(value: bool) -> void:
 	show_combined = value
+	if value == true:
+		check_solution()
 	_update_view()
 
 
@@ -157,3 +160,10 @@ func restore_paint(snapshot: Dictionary) -> void:
 
 	for cell: Vector2i in paint_state:
 		_redraw_cell(cell)
+
+
+func check_solution() -> void:
+	if paint_state == level_data.solution:
+		print("win!")
+	else:
+		print("lose!")

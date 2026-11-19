@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://ss022f3gt6p5" path="res://scripts/state_machines/game_state_machine/game_states/play_state.gd" id="4_6q06x"]
 [ext_resource type="Texture2D" uid="uid://ckdspsqjtskfp" path="res://assets/tilemaps/paint/paint.png" id="4_blune"]
 [ext_resource type="Script" uid="uid://b2j0u8g8idf04" path="res://scripts/ui/pause_menu/pause_menu.gd" id="6_ow5a4"]
+[ext_resource type="Resource" uid="uid://vm2vf8a270cj" path="res://data/levels/level001.tres" id="7_7smn1"]
 [ext_resource type="Texture2D" uid="uid://dvabdun4d0cbo" path="res://assets/tilemaps/ground/ground.png" id="7_hujxm"]
 [ext_resource type="Script" uid="uid://eau5olradqj8" path="res://scripts/components/level_log/level_log.gd" id="10_a8run"]
 [ext_resource type="PackedScene" uid="uid://bmi7nf3kdb3f7" path="res://scenes/paintbrush/paintbrush.tscn" id="11_ouso4"]
@@ -100,6 +101,7 @@ walls = NodePath("../../Tilemaps/Walls")
 
 [node name="Paintbrush" parent="." unique_id=677155198 node_paths=PackedStringArray("player") instance=ExtResource("11_ouso4")]
 z_index = 2
+level_data = ExtResource("7_7smn1")
 player = NodePath("../Player")
 
 [node name="OrbiterComponent" parent="Paintbrush" index="1" unique_id=1447300622 node_paths=PackedStringArray("player")]
