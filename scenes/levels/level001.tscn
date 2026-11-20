@@ -63,15 +63,15 @@ tile_map_data = PackedByteArray("AAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAA
 tile_set = SubResource("TileSet_lynmg")
 metadata/_edit_lock_ = true
 
+[node name="PaintBlue" type="TileMapLayer" parent="Tilemaps" unique_id=1520519270]
+tile_set = SubResource("TileSet_ypy33")
+metadata/_edit_lock_ = true
+
 [node name="PaintRed" type="TileMapLayer" parent="Tilemaps" unique_id=285132883]
 tile_set = SubResource("TileSet_ypy33")
 metadata/_edit_lock_ = true
 
 [node name="PaintYellow" type="TileMapLayer" parent="Tilemaps" unique_id=1406826092]
-tile_set = SubResource("TileSet_ypy33")
-metadata/_edit_lock_ = true
-
-[node name="PaintBlue" type="TileMapLayer" parent="Tilemaps" unique_id=1520519270]
 tile_set = SubResource("TileSet_ypy33")
 metadata/_edit_lock_ = true
 
