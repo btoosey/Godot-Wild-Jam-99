@@ -7,6 +7,7 @@ signal next_level_button_pressed
 @onready var paintbrush: Paintbrush = $"../Paintbrush"
 @onready var buttons: VBoxContainer = $Buttons
 @onready var next_level_button: Button = $Buttons/NextLevelButton
+@onready var clue_container: Node2D = $"../ClueContainer"
 
 
 func _ready() -> void:
@@ -19,6 +20,7 @@ func solution_checked(correct: bool) -> void:
 		paintbrush.hide()
 		level_ui.hide()
 		buttons.show()
+		clue_container.hide_clues()
 
 
 func _on_level_select_button_pressed() -> void:

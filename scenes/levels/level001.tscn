@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bmi7nf3kdb3f7" path="res://scenes/paintbrush/paintbrush.tscn" id="6_00xju"]
 [ext_resource type="Resource" uid="uid://vm2vf8a270cj" path="res://data/levels/level001.tres" id="7_h0bna"]
 [ext_resource type="Script" uid="uid://eau5olradqj8" path="res://scripts/components/level_log/level_log.gd" id="8_5lugw"]
+[ext_resource type="Script" uid="uid://bw3rsf83fyse1" path="res://scenes/clues/clue_container.gd" id="8_rgjh2"]
+[ext_resource type="PackedScene" uid="uid://dl655eopvvj34" path="res://scenes/clues/clue.tscn" id="8_tmnah"]
 [ext_resource type="Script" uid="uid://blid5bynf8utk" path="res://scripts/ui/game_ui/layer_buttons/layer_buttons.gd" id="9_lw753"]
 [ext_resource type="Script" uid="uid://cg53k7ahi0clv" path="res://scripts/ui/game_ui/level_victory_menu/level_victory_ui.gd" id="10_40gw8"]
 
@@ -94,6 +96,13 @@ player = NodePath("../Player")
 
 [node name="OrbiterComponent" parent="Paintbrush" index="1" unique_id=1447300622 node_paths=PackedStringArray("player")]
 player = NodePath("../../Player")
+
+[node name="ClueContainer" type="Node2D" parent="." unique_id=781406963]
+script = ExtResource("8_rgjh2")
+
+[node name="Clue" parent="ClueContainer" unique_id=990924106 instance=ExtResource("8_tmnah")]
+position = Vector2(160, 96)
+value = 3
 
 [node name="LevelLog" type="Node" parent="." unique_id=162738427 node_paths=PackedStringArray("paintbrush", "player")]
 script = ExtResource("8_5lugw")
