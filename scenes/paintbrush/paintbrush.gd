@@ -1,6 +1,7 @@
 class_name Paintbrush extends Node2D
 
 signal cell_painted
+signal solution_checked(correct: bool)
 
 @export var player: Player
 @export_range(0.0, 1.0) var inactive_layer_alpha: float = 0.3
@@ -188,6 +189,7 @@ func check_solution() -> void:
 	await _blend_paint(true)
 
 	var correct: bool = _is_solved()
+	solution_checked.emit(correct)
 	if correct:
 		show_combined = true
 		_update_view()
@@ -235,6 +237,7 @@ func _spread_offset(colour: int) -> Vector2:
 			return - layer_spread
 		_:
 			return Vector2.ZERO
+
 
 func _paint_shake() -> void:
 	var home := result_layer.position

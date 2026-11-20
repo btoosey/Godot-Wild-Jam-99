@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://vm2vf8a270cj" path="res://data/levels/level001.tres" id="7_h0bna"]
 [ext_resource type="Script" uid="uid://eau5olradqj8" path="res://scripts/components/level_log/level_log.gd" id="8_5lugw"]
 [ext_resource type="Script" uid="uid://blid5bynf8utk" path="res://scripts/ui/game_ui/layer_buttons/layer_buttons.gd" id="9_lw753"]
+[ext_resource type="Script" uid="uid://cg53k7ahi0clv" path="res://scripts/ui/game_ui/level_victory_menu/level_victory_ui.gd" id="10_40gw8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yyfjg"]
 texture = ExtResource("2_4xspe")
@@ -47,7 +48,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_th5th")
 
-[node name="Level" type="Node2D" unique_id=613229554]
+[node name="Level001" type="Node2D" unique_id=613229554]
 script = ExtResource("1_nwtso")
 level_data = ExtResource("7_h0bna")
 
@@ -123,9 +124,35 @@ text = "Yellow"
 layout_mode = 2
 text = "Blue"
 
+[node name="LevelVictoryUI" type="CanvasLayer" parent="." unique_id=1053465780]
+script = ExtResource("10_40gw8")
+
+[node name="Buttons" type="VBoxContainer" parent="LevelVictoryUI" unique_id=2000180705]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.5
+offset_top = -40.0
+offset_right = 96.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NextLevelButton" type="Button" parent="LevelVictoryUI/Buttons" unique_id=1164501839]
+layout_mode = 2
+text = "Next Level"
+
+[node name="LevelSelectButton" type="Button" parent="LevelVictoryUI/Buttons" unique_id=302558259]
+layout_mode = 2
+text = "Level Select"
+
 [connection signal="pressed" from="LevelUI/LayerButtons/Red" to="LevelUI/LayerButtons" method="_on_red_pressed"]
 [connection signal="pressed" from="LevelUI/LayerButtons/Yellow" to="LevelUI/LayerButtons" method="_on_yellow_pressed"]
 [connection signal="pressed" from="LevelUI/LayerButtons/Blue" to="LevelUI/LayerButtons" method="_on_blue_pressed"]
+[connection signal="pressed" from="LevelVictoryUI/Buttons/NextLevelButton" to="LevelVictoryUI" method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="LevelVictoryUI/Buttons/LevelSelectButton" to="LevelVictoryUI" method="_on_level_select_button_pressed"]
 
 [editable path="Player"]
 [editable path="Paintbrush"]
