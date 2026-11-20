@@ -62,7 +62,7 @@ tile_set = SubResource("TileSet_ow5a4")
 metadata/_edit_lock_ = true
 
 [node name="Walls" type="TileMapLayer" parent="Tilemaps" unique_id=1072392950]
-tile_map_data = PackedByteArray("AAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAQAAAAAAAAAFAAkAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAKAAQAAQAAAAAAAAALAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAAOAAQAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAQAAAAAAAAAOAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAALAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAIAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAIAAYAAQAAAAAAAAAMAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAASAAgAAQAAAAAAAAASAAkAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAOAAcAAQAAAAAAAAAPAAcAAQAAAAAAAAAQAAcAAQAAAAAAAAARAAcAAQAAAAAAAAASAAcAAQAAAAAAAAARAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAOAAkAAQAAAAAAAAANAAkAAQAAAAAAAAAMAAkAAQAAAAAAAAAMAAgAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_lynmg")
 metadata/_edit_lock_ = true
 
@@ -84,7 +84,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=1106888986 instance=ExtResource("5_gbjb0")]
 z_index = 2
-position = Vector2(208, 208)
+position = Vector2(496, 272)
 
 [node name="GridMover" parent="Player" index="2" unique_id=1246385282 node_paths=PackedStringArray("ground", "walls")]
 ground = NodePath("../../Tilemaps/Ground")
@@ -101,8 +101,24 @@ player = NodePath("../../Player")
 script = ExtResource("8_rgjh2")
 
 [node name="Clue" parent="ClueContainer" unique_id=990924106 instance=ExtResource("8_tmnah")]
-position = Vector2(160, 96)
-value = 3
+position = Vector2(352, 256)
+value = 4
+
+[node name="Clue2" parent="ClueContainer" unique_id=776824635 instance=ExtResource("8_tmnah")]
+position = Vector2(416, 192)
+value = 1
+
+[node name="Clue3" parent="ClueContainer" unique_id=600433909 instance=ExtResource("8_tmnah")]
+position = Vector2(448, 192)
+value = 1
+
+[node name="Clue4" parent="ClueContainer" unique_id=617801904 instance=ExtResource("8_tmnah")]
+position = Vector2(512, 192)
+value = 1
+
+[node name="Clue5" parent="ClueContainer" unique_id=809931643 instance=ExtResource("8_tmnah")]
+position = Vector2(544, 192)
+value = 1
 
 [node name="LevelLog" type="Node" parent="." unique_id=162738427 node_paths=PackedStringArray("paintbrush", "player")]
 script = ExtResource("8_5lugw")
