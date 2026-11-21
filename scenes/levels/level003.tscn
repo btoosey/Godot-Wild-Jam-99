@@ -103,22 +103,27 @@ script = ExtResource("8_t6r18")
 [node name="Clue" parent="ClueContainer" unique_id=990924106 instance=ExtResource("9_ytr81")]
 position = Vector2(352, 256)
 value = 4
+clue_colour = 1
 
 [node name="Clue2" parent="ClueContainer" unique_id=776824635 instance=ExtResource("9_ytr81")]
 position = Vector2(416, 192)
 value = 1
+clue_colour = 1
 
 [node name="Clue3" parent="ClueContainer" unique_id=600433909 instance=ExtResource("9_ytr81")]
 position = Vector2(448, 192)
 value = 1
+clue_colour = 1
 
 [node name="Clue4" parent="ClueContainer" unique_id=617801904 instance=ExtResource("9_ytr81")]
 position = Vector2(512, 192)
 value = 1
+clue_colour = 1
 
 [node name="Clue5" parent="ClueContainer" unique_id=1650858594 instance=ExtResource("9_ytr81")]
 position = Vector2(544, 192)
 value = 1
+clue_colour = 1
 
 [node name="LevelLog" type="Node" parent="." unique_id=162738427 node_paths=PackedStringArray("paintbrush", "player")]
 script = ExtResource("10_ty4ii")
