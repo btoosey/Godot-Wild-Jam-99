@@ -57,12 +57,12 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("paint"):
 		paint_button_held = true
-		skin.region_rect.position += Vector2(32, 0)
+		skin.region_rect.position.x = 32
 		if player.grid_mover.is_moving:
 			return
 		_try_paint()
 	elif event.is_action_released("paint"):
-		skin.region_rect.position -= Vector2(32, 0)
+		skin.region_rect.position.x = 0
 		paint_button_held = false
 
 	elif event.is_action_pressed("erase"):
