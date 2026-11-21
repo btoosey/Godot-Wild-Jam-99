@@ -14,9 +14,11 @@ signal next_level_button_pressed
 func _ready() -> void:
 	level_log.log_level_state()
 	layer_buttons.change_to_colour.connect(paintbrush.set_colour)
+	layer_buttons.remove_unnecessary_paints(level_data)
 	paintbrush.solution_checked.connect(level_victory_ui.solution_checked)
 	level_victory_ui.level_select_button_pressed.connect(_on_level_select_button_pressed)
 	level_victory_ui.next_level_button_pressed.connect(_on_next_level_button_pressed)
+	
 
 
 func _on_level_select_button_pressed() -> void:

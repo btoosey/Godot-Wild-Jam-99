@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dl655eopvvj34"]
+
+[ext_resource type="Script" uid="uid://cy6udeoymsu8n" path="res://scenes/clues/clue.gd" id="1_xcmfj"]
+
+[node name="Clue" type="Node2D" unique_id=990924106]
+script = ExtResource("1_xcmfj")
+
+[node name="ClueUI" type="Control" parent="." unique_id=1955229656]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Label" type="Label" parent="ClueUI" unique_id=957715153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
