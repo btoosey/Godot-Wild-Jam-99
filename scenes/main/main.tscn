@@ -11,6 +11,10 @@
 [ext_resource type="Script" uid="uid://d01ipy7dw2w4i" path="res://scripts/ui/level_select_menu/level_select_buttons/level_select_button.gd" id="7_b1x3f"]
 [ext_resource type="Script" uid="uid://b07jkr7vpvqsk" path="res://scripts/ui/level_select_menu/level_select.gd" id="7_ouso4"]
 [ext_resource type="Script" uid="uid://dhlt88aijwr56" path="res://scripts/custom_nodes/level_loader_reloader.gd" id="8_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://dehdegn4yyg7m" path="res://scenes/levels/level002.tscn" id="10_raeie"]
+[ext_resource type="PackedScene" uid="uid://blrawsxerjcv3" path="res://scenes/levels/level003.tscn" id="11_hxu8e"]
+[ext_resource type="PackedScene" uid="uid://cvrway2afc1j8" path="res://scenes/levels/level004.tscn" id="12_nvumn"]
+[ext_resource type="PackedScene" uid="uid://vypiw86i08fi" path="res://scenes/levels/level005.tscn" id="13_ou6is"]
 
 [sub_resource type="Gradient" id="Gradient_ecg72"]
 colors = PackedColorArray(0.6127906, 0.4126015, 0.42459592, 1, 0.3760335, 0.4925661, 0.7094867, 1)
@@ -122,6 +126,30 @@ text = "Level 1"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("2_hujxm")
 
+[node name="Level 2" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=341662506]
+layout_mode = 2
+text = "Level 2"
+script = ExtResource("7_b1x3f")
+level_scene = ExtResource("10_raeie")
+
+[node name="Level 3" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=1515643934]
+layout_mode = 2
+text = "Level 3"
+script = ExtResource("7_b1x3f")
+level_scene = ExtResource("11_hxu8e")
+
+[node name="Level 4" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=1539580581]
+layout_mode = 2
+text = "Level 4"
+script = ExtResource("7_b1x3f")
+level_scene = ExtResource("12_nvumn")
+
+[node name="Level 5" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=881757263]
+layout_mode = 2
+text = "Level 5"
+script = ExtResource("7_b1x3f")
+level_scene = ExtResource("13_ou6is")
+
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1506977136]
 unique_name_in_owner = true
 process_mode = 3
@@ -222,6 +250,10 @@ script = ExtResource("8_yyfjg")
 
 [connection signal="pressed" from="MainMenu/MainMenuButtons/StartGame" to="MainMenu" method="_on_start_game_pressed"]
 [connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 1" to="LevelSelect/VBoxContainer/Levels/Level 1" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 2" to="LevelSelect/VBoxContainer/Levels/Level 2" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 3" to="LevelSelect/VBoxContainer/Levels/Level 3" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 4" to="LevelSelect/VBoxContainer/Levels/Level 4" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 5" to="LevelSelect/VBoxContainer/Levels/Level 5" method="_on_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/RestartLevelButton" to="PauseMenu" method="_on_restart_level_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/LevelSelectButton" to="PauseMenu" method="_on_level_select_button_pressed"]
