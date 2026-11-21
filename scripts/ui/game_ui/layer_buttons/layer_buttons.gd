@@ -29,5 +29,5 @@ func remove_unnecessary_paints(level_data: LevelData) -> void:
 		red.show()
 	if values.has(2) or values.has(4) or values.has(5) or values.has(7):
 		yellow.show()
-	if values.has(3) or values.has(5) or values.has(6) or values.has(7):
+	if values.has(4) or values.has(5) or values.has(6) or values.has(7):
 		blue.show()
