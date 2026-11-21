@@ -13,6 +13,7 @@ signal solution_checked(correct: bool)
 @export var combine_time: float = 0.4
 @export var blend_time: float = 0.8
 
+@onready var skin: Sprite2D = $Visuals/Skin
 @onready var palette: Node2D = $Palette
 @onready var walls: TileMapLayer = $"../Tilemaps/Walls"
 @onready var red_layer: TileMapLayer = $"../Tilemaps/PaintRed"
@@ -56,10 +57,12 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("paint"):
 		paint_button_held = true
+		skin.region_rect.position += Vector2(32, 0)
 		if player.grid_mover.is_moving:
 			return
 		_try_paint()
 	elif event.is_action_released("paint"):
+		skin.region_rect.position -= Vector2(32, 0)
 		paint_button_held = false
 
 	elif event.is_action_pressed("erase"):
@@ -137,6 +140,13 @@ func _redraw_cell(cell: Vector2i) -> void:
 
 func set_colour(primary: int) -> void:
 	palette.current_paint_colour = primary
+	match primary:
+		1:
+			skin.region_rect.position = Vector2(0, 0)
+		2:
+			skin.region_rect.position = Vector2(0, 32)
+		_:
+			skin.region_rect.position = Vector2(0, 64)
 	_update_view()
 
 
