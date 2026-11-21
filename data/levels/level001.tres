@@ -7,9 +7,7 @@
 script = ExtResource("1_xamco")
 next_level = ExtResource("1_at3m6")
 solution = Dictionary[Vector2i, int]({
-Vector2i(13, 8): 1,
-Vector2i(14, 8): 1,
-Vector2i(16, 8): 1,
-Vector2i(17, 8): 1
+Vector2i(15, 7): 1,
+Vector2i(15, 8): 1
 })
 metadata/_custom_type_script = "uid://3ue5187mmswp"
