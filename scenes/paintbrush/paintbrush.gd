@@ -5,6 +5,9 @@ signal solution_checked(correct: bool)
 
 @export var player: Player
 @export_range(0.0, 1.0) var inactive_layer_alpha: float = 0.3
+@export var paint_sfx: AudioStream
+@export var erase_sfx: AudioStream
+@export var wrong_sfx: AudioStream
 
 @export_group("Check Animation")
 @export var layer_spread: Vector2 = Vector2(-24, -48)
@@ -91,6 +94,7 @@ func _try_paint() -> void:
 	if paint_button_held:
 		_remove_blocker(current_cell)
 		_paint_cell(current_cell)
+		SFXPlayer.play(paint_sfx)
 	else:
 		if blockers.get_cell_tile_data(current_cell):
 			_remove_blocker(current_cell)
@@ -98,6 +102,7 @@ func _try_paint() -> void:
 			_add_blocker(current_cell)
 		else:
 			_erase_cell(current_cell)
+			SFXPlayer.play(erase_sfx)
 
 
 func _can_paint(cell: Vector2i) -> bool:
@@ -265,6 +270,7 @@ func _spread_offset(colour: int) -> Vector2:
 
 
 func _paint_shake() -> void:
+	SFXPlayer.play(wrong_sfx)
 	var home := result_layer.position
 	var tween := create_tween()
 

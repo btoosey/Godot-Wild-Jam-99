@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://eau5olradqj8" path="res://scripts/components/level_log/level_log.gd" id="10_7ghuq"]
 [ext_resource type="Script" uid="uid://blid5bynf8utk" path="res://scripts/ui/game_ui/layer_buttons/layer_buttons.gd" id="11_22rrj"]
 [ext_resource type="Script" uid="uid://cg53k7ahi0clv" path="res://scripts/ui/game_ui/level_victory_menu/level_victory_ui.gd" id="12_v5acx"]
+[ext_resource type="AudioStream" uid="uid://b00ri5mbng58h" path="res://assets/sfx/freesound_community-success_bell-6776.mp3" id="13_5aixx"]
 [ext_resource type="Texture2D" uid="uid://ctwb88pdc27se" path="res://assets/sprites/palette.png" id="13_st4d5"]
 [ext_resource type="Texture2D" uid="uid://bxac17vq65rkq" path="res://assets/tilemaps/paint/red.png" id="15_5aixx"]
 [ext_resource type="Texture2D" uid="uid://bstajgbohcvby" path="res://assets/tilemaps/paint/yellow.png" id="16_htmlf"]
@@ -235,6 +236,7 @@ player = NodePath("../Player")
 
 [node name="LevelVictoryUI" type="CanvasLayer" parent="." unique_id=1053465780]
 script = ExtResource("12_v5acx")
+win_sfx = ExtResource("13_5aixx")
 
 [node name="Buttons" type="VBoxContainer" parent="LevelVictoryUI" unique_id=2000180705]
 visible = false

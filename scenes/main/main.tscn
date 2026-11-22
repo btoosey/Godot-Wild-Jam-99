@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bihqm1ntlmqo1" path="res://scenes/levels/level001.tscn" id="2_hujxm"]
 [ext_resource type="Script" uid="uid://b4au8pmkhwese" path="res://scripts/state_machines/game_state_machine/game_states/main_menu_state.gd" id="2_iuonh"]
 [ext_resource type="Script" uid="uid://dcfr33b6je7d4" path="res://scripts/ui/main_menu/main_menu.gd" id="2_l3cfh"]
+[ext_resource type="AudioStream" uid="uid://b0df5sx87unjm" path="res://assets/music/andriig-background-music-background-604062.mp3" id="2_s17dp"]
 [ext_resource type="Script" uid="uid://ss022f3gt6p5" path="res://scripts/state_machines/game_state_machine/game_states/play_state.gd" id="4_6q06x"]
 [ext_resource type="Script" uid="uid://cww0pxt05pcfr" path="res://scripts/state_machines/game_state_machine/game_states/level_select_state.gd" id="4_yyfjg"]
 [ext_resource type="Script" uid="uid://b2j0u8g8idf04" path="res://scripts/ui/pause_menu/pause_menu.gd" id="6_ow5a4"]
@@ -26,6 +27,7 @@
 
 [node name="Main" type="Node" unique_id=1911867851]
 script = ExtResource("1_k2fmo")
+main_music_stream = ExtResource("2_s17dp")
 
 [node name="Level" type="Node2D" parent="." unique_id=1758344986]
 
@@ -63,9 +65,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -207.5
-offset_top = 48.0
+offset_top = 72.0
 offset_right = 207.5
-offset_bottom = 282.0
+offset_bottom = 306.0
 grow_horizontal = 2
 texture = ExtResource("9_p8abn")
 
@@ -76,9 +78,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -207.5
-offset_top = -57.5
+offset_top = -33.5
 offset_right = 207.5
-offset_bottom = 57.5
+offset_bottom = 81.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.14767182, 0.14767179, 0.14767179, 1)
@@ -94,9 +96,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = 83.0
+offset_top = 123.0
 offset_right = 100.0
-offset_bottom = 159.0
+offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -104,10 +106,6 @@ theme_override_constants/separation = 12
 [node name="StartGame" type="Button" parent="MainMenu/MainMenuButtons" unique_id=610939479]
 layout_mode = 2
 text = "Start Game"
-
-[node name="Settings" type="Button" parent="MainMenu/MainMenuButtons" unique_id=2146701926]
-layout_mode = 2
-text = "Settings"
 
 [node name="LevelSelect" type="CanvasLayer" parent="." unique_id=2112610149]
 unique_name_in_owner = true

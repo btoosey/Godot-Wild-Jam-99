@@ -3,6 +3,8 @@ extends CanvasLayer
 signal level_select_button_pressed
 signal next_level_button_pressed
 
+@export var win_sfx: AudioStream
+
 @onready var blockers: TileMapLayer = $"../Tilemaps/Blockers"
 @onready var walls: TileMapLayer = $"../Tilemaps/Walls"
 @onready var level_ui: CanvasLayer = $"../LevelUI"
@@ -18,6 +20,7 @@ func _ready() -> void:
 
 func solution_checked(correct: bool) -> void:
 	if correct:
+		SFXPlayer.play(win_sfx)
 		paintbrush.hide()
 		level_ui.hide()
 		buttons.show()

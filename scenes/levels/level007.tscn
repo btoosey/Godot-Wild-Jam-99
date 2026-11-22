@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bxac17vq65rkq" path="res://assets/tilemaps/paint/red.png" id="14_w01ab"]
 [ext_resource type="Texture2D" uid="uid://bstajgbohcvby" path="res://assets/tilemaps/paint/yellow.png" id="15_7vrj0"]
 [ext_resource type="Texture2D" uid="uid://q5fo34wt6rjf" path="res://assets/tilemaps/paint/blue.png" id="16_tbpbf"]
+[ext_resource type="AudioStream" uid="uid://b00ri5mbng58h" path="res://assets/sfx/freesound_community-success_bell-6776.mp3" id="18_w01ab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yyfjg"]
 texture = ExtResource("3_040m1")
@@ -268,6 +269,7 @@ texture_normal = ExtResource("16_tbpbf")
 
 [node name="LevelVictoryUI" type="CanvasLayer" parent="." unique_id=1053465780]
 script = ExtResource("12_d78d8")
+win_sfx = ExtResource("18_w01ab")
 
 [node name="Buttons" type="VBoxContainer" parent="LevelVictoryUI" unique_id=2000180705]
 visible = false
