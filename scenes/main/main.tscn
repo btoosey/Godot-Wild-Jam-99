@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b07jkr7vpvqsk" path="res://scripts/ui/level_select_menu/level_select.gd" id="7_ouso4"]
 [ext_resource type="Texture2D" uid="uid://d2nlojrur14yr" path="res://assets/background/bg_tile.png" id="8_p8abn"]
 [ext_resource type="Script" uid="uid://dhlt88aijwr56" path="res://scripts/custom_nodes/level_loader_reloader.gd" id="8_yyfjg"]
+[ext_resource type="Texture2D" uid="uid://ceeqpaw6h802w" path="res://assets/main_menu/title.png" id="9_p8abn"]
 [ext_resource type="PackedScene" uid="uid://dehdegn4yyg7m" path="res://scenes/levels/level002.tscn" id="10_raeie"]
 [ext_resource type="PackedScene" uid="uid://blrawsxerjcv3" path="res://scenes/levels/level003.tscn" id="11_hxu8e"]
 [ext_resource type="PackedScene" uid="uid://cvrway2afc1j8" path="res://scenes/levels/level004.tscn" id="12_nvumn"]
@@ -57,6 +58,17 @@ grow_vertical = 2
 texture = ExtResource("8_p8abn")
 stretch_mode = 1
 
+[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=306283567]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -207.5
+offset_top = 48.0
+offset_right = 207.5
+offset_bottom = 282.0
+grow_horizontal = 2
+texture = ExtResource("9_p8abn")
+
 [node name="Title" type="Label" parent="MainMenu" unique_id=893177840]
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,14 +76,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -207.5
-offset_top = -127.0
+offset_top = -57.5
 offset_right = 207.5
-offset_bottom = -17.0
+offset_bottom = 57.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.14767182, 0.14767179, 0.14767179, 1)
 theme_override_font_sizes/font_size = 80
-text = "ART
-BLOCK"
+text = "BLOCK"
 horizontal_alignment = 1
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="MainMenu" unique_id=226532878]
@@ -82,9 +94,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = 67.0
+offset_top = 83.0
 offset_right = 100.0
-offset_bottom = 143.0
+offset_bottom = 159.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -126,23 +138,32 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 24
 
 [node name="Label" type="Label" parent="LevelSelect/Levels" unique_id=55819264]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.2231029, 0.2231029, 0.22310287, 1)
+theme_override_font_sizes/font_size = 48
 text = "Choose a level"
 
 [node name="Difficulties" type="HBoxContainer" parent="LevelSelect/Levels" unique_id=244345872]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 16
 
 [node name="Easy" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=181954482]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Easy" unique_id=271184574]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.87058824, 0.21176471, 0.15294118, 1)
+theme_override_font_sizes/font_size = 24
 text = "Easy"
 
 [node name="EasyLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Easy" unique_id=1886944100]
@@ -184,10 +205,14 @@ level_scene = ExtResource("13_ou6is")
 
 [node name="Medium" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=804535895]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Medium" unique_id=1139271354]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.827451, 0.16470589, 1)
+theme_override_font_sizes/font_size = 24
 text = "Medium"
 
 [node name="MediumLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Medium" unique_id=1627309505]
@@ -216,10 +241,14 @@ level_scene = ExtResource("16_ou6is")
 
 [node name="Hard" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=1211632039]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Hard" unique_id=1627844714]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.36862746, 0.8980392, 1)
+theme_override_font_sizes/font_size = 24
 text = "Hard"
 
 [node name="HardLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Hard" unique_id=41498323]
