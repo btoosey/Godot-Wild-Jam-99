@@ -7,11 +7,11 @@ signal solution_checked(correct: bool)
 @export_range(0.0, 1.0) var inactive_layer_alpha: float = 0.3
 
 @export_group("Check Animation")
-@export var layer_spread: Vector2 = Vector2(-8, -40)
+@export var layer_spread: Vector2 = Vector2(-24, -48)
 @export var wait_time: float = 0.8
-@export var spread_time: float = 0.4
-@export var combine_time: float = 0.4
-@export var blend_time: float = 0.8
+@export var spread_time: float = 0.8
+@export var combine_time: float = 0.8
+@export var blend_time: float = 0.4
 
 @onready var skin: Sprite2D = $Visuals/Skin
 @onready var palette: Node2D = $Palette
