@@ -2,15 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ciaxnkmwk6gys" path="res://scripts/components/player/grid_mover.gd" id="1_8afob"]
 [ext_resource type="Script" uid="uid://cd7xcpyhx806m" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Texture2D" uid="uid://bks4u20erep5q" path="res://assets/sprites/player.png" id="2_lvxji"]
 [ext_resource type="Script" uid="uid://d4ih73a18ph8q" path="res://scenes/player/player_camera.gd" id="3_gmlin"]
-
-[sub_resource type="Gradient" id="Gradient_x7p2l"]
-colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dovo2"]
-gradient = SubResource("Gradient_x7p2l")
-width = 32
-height = 32
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lynmg"]
 size = Vector2(16, 16)
@@ -21,7 +14,7 @@ script = ExtResource("1_dovo2")
 [node name="Visuals" type="CanvasGroup" parent="." unique_id=1882564382]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=738659998]
-texture = SubResource("GradientTexture2D_dovo2")
+texture = ExtResource("2_lvxji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979325154]
 shape = SubResource("RectangleShape2D_lynmg")
