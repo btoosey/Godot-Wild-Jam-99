@@ -148,6 +148,26 @@ position = Vector2(512, 160)
 value = 3
 clue_colour = 1
 
+[node name="Tutorial2" type="Label" parent="." unique_id=21669160]
+custom_minimum_size = Vector2(332, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 595.5
+offset_top = 147.0
+offset_right = 927.5
+offset_bottom = 507.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_font_sizes/font_size = 20
+text = "A clue will show the total number of tiles in that colour.
+
+They do not show how many of that colour appear consecutively. "
+autowrap_mode = 2
+
 [node name="LevelLog" type="Node" parent="." unique_id=162738427 node_paths=PackedStringArray("paintbrush", "player")]
 script = ExtResource("10_2ud64")
 paintbrush = NodePath("../Paintbrush")

@@ -178,6 +178,28 @@ position = Vector2(512, 160)
 value = 1
 clue_colour = 3
 
+[node name="ClueOrder" type="Label" parent="." unique_id=676221827]
+custom_minimum_size = Vector2(332, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 611.5
+offset_top = 25.0
+offset_right = 943.5
+offset_bottom = 517.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_font_sizes/font_size = 20
+text = "Clues are read from left to right/top to bottom.
+
+The order in which colours appear in clues is the order in which at least one tile of that colour first appears in the grid from the clue's perspective.
+
+Not all of one colour must be used before a new colour is introduced in a row/column."
+autowrap_mode = 2
+
 [node name="LevelLog" type="Node" parent="." unique_id=162738427 node_paths=PackedStringArray("paintbrush", "player")]
 script = ExtResource("10_lyun6")
 paintbrush = NodePath("../Paintbrush")

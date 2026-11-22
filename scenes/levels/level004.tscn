@@ -158,6 +158,27 @@ position = Vector2(480, 192)
 value = 1
 clue_colour = 1
 
+[node name="MixingColours" type="Label" parent="." unique_id=1125243717]
+custom_minimum_size = Vector2(332, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 595.5
+offset_top = 107.0
+offset_right = 927.5
+offset_bottom = 467.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_font_sizes/font_size = 20
+text = "Different colours are painted on separate layers. Overlapping paint mixes the colours to create new ones.
+
+Select different colours using the palette in bottom left of the screen.
+"
+autowrap_mode = 2
+
 [node name="LevelLog" type="Node" parent="." unique_id=162738427 node_paths=PackedStringArray("paintbrush", "player")]
 script = ExtResource("10_ugxsx")
 paintbrush = NodePath("../Paintbrush")
