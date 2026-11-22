@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://m828vvx8td7a"]
 
 [ext_resource type="Script" uid="uid://3ue5187mmswp" path="res://data/levels/level_data.gd" id="1_as0lx"]
+[ext_resource type="PackedScene" uid="uid://bxp3v8kqgbgf" path="res://scenes/levels/level007.tscn" id="1_ejjfb"]
 
 [resource]
 script = ExtResource("1_as0lx")
+next_level = ExtResource("1_ejjfb")
 solution = Dictionary[Vector2i, int]({
 Vector2i(13, 7): 2,
 Vector2i(13, 8): 2,
