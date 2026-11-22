@@ -50,7 +50,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_th5th")
 
-[node name="Level007" type="Node2D" unique_id=613229554]
+[node name="Level008" type="Node2D" unique_id=613229554]
 script = ExtResource("1_pfvdv")
 level_data = ExtResource("2_pfvdv")
 
