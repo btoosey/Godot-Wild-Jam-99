@@ -3,6 +3,8 @@ extends CanvasLayer
 signal level_select_button_pressed
 signal next_level_button_pressed
 
+@onready var blockers: TileMapLayer = $"../Tilemaps/Blockers"
+@onready var walls: TileMapLayer = $"../Tilemaps/Walls"
 @onready var level_ui: CanvasLayer = $"../LevelUI"
 @onready var paintbrush: Paintbrush = $"../Paintbrush"
 @onready var buttons: VBoxContainer = $Buttons
@@ -21,6 +23,10 @@ func solution_checked(correct: bool) -> void:
 		level_ui.hide()
 		buttons.show()
 		clue_container.hide_clues()
+		blockers.hide()
+		var tween := create_tween()
+		tween.tween_property(walls, "modulate:a", 0.0, 1)
+		PlayerProgress.increment_highest_unlocked()
 
 
 func _on_level_select_button_pressed() -> void:

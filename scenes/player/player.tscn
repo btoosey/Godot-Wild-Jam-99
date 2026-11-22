@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ciaxnkmwk6gys" path="res://scripts/components/player/grid_mover.gd" id="1_8afob"]
 [ext_resource type="Script" uid="uid://cd7xcpyhx806m" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://d4ih73a18ph8q" path="res://scenes/player/player_camera.gd" id="3_gmlin"]
 
 [sub_resource type="Gradient" id="Gradient_x7p2l"]
 colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 1)
@@ -32,3 +33,9 @@ grid_size = Vector2(32, 32)
 player = NodePath("..")
 
 [node name="MovementMarker" type="Marker2D" parent="GridMover" unique_id=1282810239]
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=838618906 node_paths=PackedStringArray("target")]
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("3_gmlin")
+target = NodePath("..")
