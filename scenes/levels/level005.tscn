@@ -12,7 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://dl655eopvvj34" path="res://scenes/clues/clue.tscn" id="9_724i1"]
 [ext_resource type="Script" uid="uid://eau5olradqj8" path="res://scripts/components/level_log/level_log.gd" id="10_lyun6"]
 [ext_resource type="Script" uid="uid://blid5bynf8utk" path="res://scripts/ui/game_ui/layer_buttons/layer_buttons.gd" id="11_y5q4d"]
+[ext_resource type="Texture2D" uid="uid://ctwb88pdc27se" path="res://assets/sprites/palette.png" id="12_7upbr"]
 [ext_resource type="Script" uid="uid://cg53k7ahi0clv" path="res://scripts/ui/game_ui/level_victory_menu/level_victory_ui.gd" id="12_g3sw3"]
+[ext_resource type="Texture2D" uid="uid://bxac17vq65rkq" path="res://assets/tilemaps/paint/red.png" id="14_cpof8"]
+[ext_resource type="Texture2D" uid="uid://bstajgbohcvby" path="res://assets/tilemaps/paint/yellow.png" id="15_s0gv4"]
+[ext_resource type="Texture2D" uid="uid://q5fo34wt6rjf" path="res://assets/tilemaps/paint/blue.png" id="16_724i1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yyfjg"]
 texture = ExtResource("3_03xhy")
@@ -179,32 +183,48 @@ script = ExtResource("10_lyun6")
 paintbrush = NodePath("../Paintbrush")
 player = NodePath("../Player")
 
-[node name="LevelUI" type="CanvasLayer" parent="." unique_id=1594464233]
+[node name="LevelUI" type="CanvasLayer" parent="." unique_id=783651574]
 
-[node name="LayerButtons" type="VBoxContainer" parent="LevelUI" unique_id=2066060600]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -50.5
-offset_right = 59.0
-offset_bottom = 50.5
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="LevelUI" unique_id=718563871]
+offset_left = 27.0
+offset_top = 362.0
+offset_right = 184.0
+offset_bottom = 516.0
+texture = ExtResource("12_7upbr")
+
+[node name="LayerButtons" type="Control" parent="LevelUI" unique_id=1814210895]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("11_y5q4d")
 
-[node name="Red" type="Button" parent="LevelUI/LayerButtons" unique_id=45072653]
+[node name="Red" type="TextureButton" parent="LevelUI/LayerButtons" unique_id=301991476]
 visible = false
-layout_mode = 2
-text = "Red"
+layout_mode = 0
+offset_left = 123.0
+offset_top = 397.0
+offset_right = 166.0
+offset_bottom = 438.0
+texture_normal = ExtResource("14_cpof8")
 
-[node name="Yellow" type="Button" parent="LevelUI/LayerButtons" unique_id=392801276]
+[node name="Yellow" type="TextureButton" parent="LevelUI/LayerButtons" unique_id=122497998]
 visible = false
-layout_mode = 2
-text = "Yellow"
+layout_mode = 0
+offset_left = 74.0
+offset_top = 383.0
+offset_right = 133.0
+offset_bottom = 420.0
+texture_normal = ExtResource("15_s0gv4")
 
-[node name="Blue" type="Button" parent="LevelUI/LayerButtons" unique_id=1805290467]
+[node name="Blue" type="TextureButton" parent="LevelUI/LayerButtons" unique_id=1339614765]
 visible = false
-layout_mode = 2
-text = "Blue"
+layout_mode = 0
+offset_left = 107.0
+offset_top = 439.0
+offset_right = 157.0
+offset_bottom = 487.0
+texture_normal = ExtResource("16_724i1")
 
 [node name="LevelVictoryUI" type="CanvasLayer" parent="." unique_id=1053465780]
 script = ExtResource("12_g3sw3")

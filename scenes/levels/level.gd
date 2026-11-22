@@ -7,7 +7,7 @@ signal next_level_button_pressed
 
 @onready var level_log: Node = $LevelLog
 @onready var paintbrush: Paintbrush = $Paintbrush
-@onready var layer_buttons: VBoxContainer = $LevelUI/LayerButtons
+@onready var layer_buttons: Control = $LevelUI/LayerButtons
 @onready var level_victory_ui: CanvasLayer = $LevelVictoryUI
 
 

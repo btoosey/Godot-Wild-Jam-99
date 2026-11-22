@@ -1,10 +1,10 @@
-extends VBoxContainer
+extends Control
 
 signal change_to_colour(colour: int)
 
-@onready var red: Button = $Red
-@onready var yellow: Button = $Yellow
-@onready var blue: Button = $Blue
+@onready var red: TextureButton = $Red
+@onready var yellow: TextureButton = $Yellow
+@onready var blue: TextureButton = $Blue
 
 const RED := 1
 const YELLOW := 2
