@@ -42,6 +42,10 @@ folder_colors={
 "res://scripts/": "blue"
 }
 
+[gui]
+
+theme/custom_font="uid://b2tkyt48ei8s3"
+
 [input]
 
 pause_unpause={
