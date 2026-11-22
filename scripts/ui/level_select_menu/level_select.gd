@@ -7,9 +7,10 @@ extends CanvasLayer
 @onready var medium_levels: VBoxContainer = $Levels/Difficulties/Medium/MediumLevels
 @onready var hard_levels: VBoxContainer = $Levels/Difficulties/Hard/HardLevels
 
+var levels = []
+
 
 func _ready() -> void:
-	var levels = []
 	for btn in easy_levels.get_children():
 		levels.append(btn)
 	for btn in medium_levels.get_children():
@@ -25,3 +26,9 @@ func _on_level_selected(level_scene: PackedScene) -> void:
 	level_loader_reloader.level_scene = level_scene
 	level_loader_reloader.instantiate_level()
 	game_state_machine._on_transition_requested(game_state_machine.current_state, GameState.State.PLAY)
+
+
+func unlock_up_to_current() -> void:
+	for i in levels.size():
+		if i <= PlayerProgress.highest_unlocked:
+			levels[i].disabled = false

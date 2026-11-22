@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://chfdxmdme5gr4"
 MusicPlayer="*uid://ce6uxo2bx2kww"
 SFXPlayer="*uid://7bbx2pt64iwa"
 Colours="*uid://tf2eu50armgk"
+PlayerProgress="*uid://dgl7vq4avg84k"
 
 [display]
 

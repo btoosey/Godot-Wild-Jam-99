@@ -148,24 +148,28 @@ level_scene = ExtResource("2_hujxm")
 
 [node name="Level 2" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=341662506]
 layout_mode = 2
+disabled = true
 text = "Level 2"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("10_raeie")
 
 [node name="Level 3" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=1515643934]
 layout_mode = 2
+disabled = true
 text = "Level 3"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("11_hxu8e")
 
 [node name="Level 4" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=1539580581]
 layout_mode = 2
+disabled = true
 text = "Level 4"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("12_nvumn")
 
 [node name="Level 5" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=881757263]
 layout_mode = 2
+disabled = true
 text = "Level 5"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("13_ou6is")
@@ -183,18 +187,21 @@ layout_mode = 2
 
 [node name="Level 6" type="Button" parent="LevelSelect/Levels/Difficulties/Medium/MediumLevels" unique_id=1261150055]
 layout_mode = 2
+disabled = true
 text = "Level 6"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("14_hxu8e")
 
 [node name="Level 7" type="Button" parent="LevelSelect/Levels/Difficulties/Medium/MediumLevels" unique_id=2037730415]
 layout_mode = 2
+disabled = true
 text = "Level 7"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("15_nvumn")
 
 [node name="Level 8" type="Button" parent="LevelSelect/Levels/Difficulties/Medium/MediumLevels" unique_id=24334151]
 layout_mode = 2
+disabled = true
 text = "Level 8"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("16_ou6is")
@@ -212,12 +219,14 @@ layout_mode = 2
 
 [node name="Level 9" type="Button" parent="LevelSelect/Levels/Difficulties/Hard/HardLevels" unique_id=385476995]
 layout_mode = 2
+disabled = true
 text = "Level 9"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("17_necax")
 
 [node name="Level 10" type="Button" parent="LevelSelect/Levels/Difficulties/Hard/HardLevels" unique_id=1319683555]
 layout_mode = 2
+disabled = true
 text = "Level 10"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("18_r4lks")

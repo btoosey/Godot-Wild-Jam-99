@@ -26,6 +26,7 @@ func solution_checked(correct: bool) -> void:
 		blockers.hide()
 		var tween := create_tween()
 		tween.tween_property(walls, "modulate:a", 0.0, 1)
+		PlayerProgress.increment_highest_unlocked()
 
 
 func _on_level_select_button_pressed() -> void:

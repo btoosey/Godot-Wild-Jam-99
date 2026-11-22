@@ -4,6 +4,7 @@ extends GameState
 
 
 func enter() -> void:
+	level_select.unlock_up_to_current()
 	level_select.show()
 
 
