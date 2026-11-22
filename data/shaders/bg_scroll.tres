@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cfiqp4rt6dxjb"]
+
+[ext_resource type="Shader" uid="uid://dsi7wski20phy" path="res://scenes/main/bg_scroll.gdshader" id="1_cr61h"]
+
+[resource]
+shader = ExtResource("1_cr61h")
+shader_parameter/x_speed = 0.15
+shader_parameter/y_speed = 0.2

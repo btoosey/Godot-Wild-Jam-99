@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://cww0pxt05pcfr" path="res://scripts/state_machines/game_state_machine/game_states/level_select_state.gd" id="4_yyfjg"]
 [ext_resource type="Script" uid="uid://b2j0u8g8idf04" path="res://scripts/ui/pause_menu/pause_menu.gd" id="6_ow5a4"]
 [ext_resource type="Script" uid="uid://d01ipy7dw2w4i" path="res://scripts/ui/level_select_menu/level_select_buttons/level_select_button.gd" id="7_b1x3f"]
+[ext_resource type="Material" uid="uid://cfiqp4rt6dxjb" path="res://data/shaders/bg_scroll.tres" id="7_m4h2d"]
 [ext_resource type="Script" uid="uid://b07jkr7vpvqsk" path="res://scripts/ui/level_select_menu/level_select.gd" id="7_ouso4"]
+[ext_resource type="Texture2D" uid="uid://d2nlojrur14yr" path="res://assets/background/bg_tile.png" id="8_p8abn"]
 [ext_resource type="Script" uid="uid://dhlt88aijwr56" path="res://scripts/custom_nodes/level_loader_reloader.gd" id="8_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://dehdegn4yyg7m" path="res://scenes/levels/level002.tscn" id="10_raeie"]
 [ext_resource type="PackedScene" uid="uid://blrawsxerjcv3" path="res://scenes/levels/level003.tscn" id="11_hxu8e"]
@@ -20,14 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dyum68rv8jvd4" path="res://scenes/levels/level008.tscn" id="16_ou6is"]
 [ext_resource type="PackedScene" uid="uid://db46p2oxb5ohe" path="res://scenes/levels/level009.tscn" id="17_necax"]
 [ext_resource type="PackedScene" uid="uid://20nt06fbldr5" path="res://scenes/levels/level010.tscn" id="18_r4lks"]
-
-[sub_resource type="Gradient" id="Gradient_ecg72"]
-colors = PackedColorArray(0.6127906, 0.4126015, 0.42459592, 1, 0.3760335, 0.4925661, 0.7094867, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cj01r"]
-gradient = SubResource("Gradient_ecg72")
-fill_from = Vector2(0.33913043, 0.06521739)
-fill_to = Vector2(0.7173913, 0.92608696)
 
 [node name="Main" type="Node" unique_id=1911867851]
 script = ExtResource("1_k2fmo")
@@ -54,12 +48,14 @@ unique_name_in_owner = true
 script = ExtResource("2_l3cfh")
 
 [node name="Background" type="TextureRect" parent="MainMenu" unique_id=1145910525]
+material = ExtResource("7_m4h2d")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_cj01r")
+texture = ExtResource("8_p8abn")
+stretch_mode = 1
 
 [node name="Title" type="Label" parent="MainMenu" unique_id=893177840]
 anchors_preset = 8
@@ -74,7 +70,9 @@ offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 80
-text = "Game Title"
+text = "ART
+BLOCK"
+horizontal_alignment = 1
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="MainMenu" unique_id=226532878]
 custom_minimum_size = Vector2(200, 0)
@@ -83,10 +81,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = 16.0
-offset_right = 48.0
-offset_bottom = 82.0
+offset_left = -100.0
+offset_top = 67.0
+offset_right = 100.0
+offset_bottom = 143.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -103,6 +101,16 @@ text = "Settings"
 unique_name_in_owner = true
 visible = false
 script = ExtResource("7_ouso4")
+
+[node name="Background" type="TextureRect" parent="LevelSelect" unique_id=872146537]
+material = ExtResource("7_m4h2d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_p8abn")
+stretch_mode = 1
 
 [node name="Levels" type="VBoxContainer" parent="LevelSelect" unique_id=536352581]
 anchors_preset = 8
@@ -237,12 +245,15 @@ process_mode = 3
 visible = false
 script = ExtResource("6_ow5a4")
 
-[node name="Panel" type="Panel" parent="PauseMenu" unique_id=1386804991]
+[node name="Background" type="TextureRect" parent="PauseMenu" unique_id=618649887]
+material = ExtResource("7_m4h2d")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("8_p8abn")
+stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu" unique_id=1511921344]
 anchors_preset = 8
