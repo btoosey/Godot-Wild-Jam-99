@@ -16,6 +16,7 @@ signal solution_checked(correct: bool)
 @onready var skin: Sprite2D = $Visuals/Skin
 @onready var palette: Node2D = $Palette
 @onready var walls: TileMapLayer = $"../Tilemaps/Walls"
+@onready var blockers: TileMapLayer = $"../Tilemaps/Blockers"
 @onready var red_layer: TileMapLayer = $"../Tilemaps/PaintRed"
 @onready var yellow_layer: TileMapLayer = $"../Tilemaps/PaintYellow"
 @onready var blue_layer: TileMapLayer = $"../Tilemaps/PaintBlue"
@@ -88,9 +89,15 @@ func _try_paint() -> void:
 		return
 
 	if paint_button_held:
+		_remove_blocker(current_cell)
 		_paint_cell(current_cell)
 	else:
-		_erase_cell(current_cell)
+		if blockers.get_cell_tile_data(current_cell):
+			_remove_blocker(current_cell)
+		elif red_layer.get_cell_tile_data(current_cell) == null and yellow_layer.get_cell_tile_data(current_cell) == null and blue_layer.get_cell_tile_data(current_cell) == null:
+			_add_blocker(current_cell)
+		else:
+			_erase_cell(current_cell)
 
 
 func _can_paint(cell: Vector2i) -> bool:
@@ -106,6 +113,14 @@ func _paint_cell(cell: Vector2i) -> void:
 
 func _erase_cell(cell: Vector2i) -> void:
 	_set_cell_mask(cell, paint_state.get(cell, 0) & ~palette.current_paint_colour)
+
+
+func _remove_blocker(cell: Vector2i) -> void:
+	blockers.erase_cell(cell)
+
+
+func _add_blocker(cell: Vector2i) -> void:
+	blockers.set_cell(cell, 0, Vector2i(0,0))
 
 
 func _set_cell_mask(cell: Vector2i, new_mask: int) -> void:
