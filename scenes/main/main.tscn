@@ -104,82 +104,119 @@ unique_name_in_owner = true
 visible = false
 script = ExtResource("7_ouso4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelect" unique_id=181954482]
+[node name="Levels" type="VBoxContainer" parent="LevelSelect" unique_id=536352581]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.0
-offset_top = -77.0
-offset_right = 51.0
-offset_bottom = 77.0
+offset_left = -102.5
+offset_top = -112.5
+offset_right = 102.5
+offset_bottom = 112.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="LevelSelect/VBoxContainer" unique_id=271184574]
+[node name="Label" type="Label" parent="LevelSelect/Levels" unique_id=55819264]
 layout_mode = 2
-text = "
-Choose Level"
+size_flags_horizontal = 4
+text = "Choose a level"
 
-[node name="Levels" type="VBoxContainer" parent="LevelSelect/VBoxContainer" unique_id=1886944100]
+[node name="Difficulties" type="HBoxContainer" parent="LevelSelect/Levels" unique_id=244345872]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Easy" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=181954482]
 layout_mode = 2
 
-[node name="Level 1" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=137428368]
+[node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Easy" unique_id=271184574]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Easy"
+
+[node name="EasyLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Easy" unique_id=1886944100]
+layout_mode = 2
+
+[node name="Level 1" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=137428368]
 layout_mode = 2
 text = "Level 1"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("2_hujxm")
 
-[node name="Level 2" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=341662506]
+[node name="Level 2" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=341662506]
 layout_mode = 2
 text = "Level 2"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("10_raeie")
 
-[node name="Level 3" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=1515643934]
+[node name="Level 3" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=1515643934]
 layout_mode = 2
 text = "Level 3"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("11_hxu8e")
 
-[node name="Level 4" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=1539580581]
+[node name="Level 4" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=1539580581]
 layout_mode = 2
 text = "Level 4"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("12_nvumn")
 
-[node name="Level 5" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=881757263]
+[node name="Level 5" type="Button" parent="LevelSelect/Levels/Difficulties/Easy/EasyLevels" unique_id=881757263]
 layout_mode = 2
 text = "Level 5"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("13_ou6is")
 
-[node name="Level 6" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=1481485533]
+[node name="Medium" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=804535895]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Medium" unique_id=1139271354]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Medium"
+
+[node name="MediumLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Medium" unique_id=1627309505]
+layout_mode = 2
+
+[node name="Level 6" type="Button" parent="LevelSelect/Levels/Difficulties/Medium/MediumLevels" unique_id=1261150055]
 layout_mode = 2
 text = "Level 6"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("14_hxu8e")
 
-[node name="Level 7" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=973178330]
+[node name="Level 7" type="Button" parent="LevelSelect/Levels/Difficulties/Medium/MediumLevels" unique_id=2037730415]
 layout_mode = 2
 text = "Level 7"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("15_nvumn")
 
-[node name="Level 8" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=1868364778]
+[node name="Level 8" type="Button" parent="LevelSelect/Levels/Difficulties/Medium/MediumLevels" unique_id=24334151]
 layout_mode = 2
 text = "Level 8"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("16_ou6is")
 
-[node name="Level 9" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=1055256419]
+[node name="Hard" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=1211632039]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Hard" unique_id=1627844714]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Hard"
+
+[node name="HardLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Hard" unique_id=41498323]
+layout_mode = 2
+
+[node name="Level 9" type="Button" parent="LevelSelect/Levels/Difficulties/Hard/HardLevels" unique_id=385476995]
 layout_mode = 2
 text = "Level 9"
 script = ExtResource("7_b1x3f")
 level_scene = ExtResource("17_necax")
 
-[node name="Level 10" type="Button" parent="LevelSelect/VBoxContainer/Levels" unique_id=565471103]
+[node name="Level 10" type="Button" parent="LevelSelect/Levels/Difficulties/Hard/HardLevels" unique_id=1319683555]
 layout_mode = 2
 text = "Level 10"
 script = ExtResource("7_b1x3f")
@@ -284,16 +321,16 @@ value = 1.0
 script = ExtResource("8_yyfjg")
 
 [connection signal="pressed" from="MainMenu/MainMenuButtons/StartGame" to="MainMenu" method="_on_start_game_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 1" to="LevelSelect/VBoxContainer/Levels/Level 1" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 2" to="LevelSelect/VBoxContainer/Levels/Level 2" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 3" to="LevelSelect/VBoxContainer/Levels/Level 3" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 4" to="LevelSelect/VBoxContainer/Levels/Level 4" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 5" to="LevelSelect/VBoxContainer/Levels/Level 5" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 6" to="LevelSelect/VBoxContainer/Levels/Level 6" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 7" to="LevelSelect/VBoxContainer/Levels/Level 7" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 8" to="LevelSelect/VBoxContainer/Levels/Level 8" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 9" to="LevelSelect/VBoxContainer/Levels/Level 9" method="_on_pressed"]
-[connection signal="pressed" from="LevelSelect/VBoxContainer/Levels/Level 10" to="LevelSelect/VBoxContainer/Levels/Level 10" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 1" to="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 1" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 2" to="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 2" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 3" to="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 3" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 4" to="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 4" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 5" to="LevelSelect/Levels/Difficulties/Easy/EasyLevels/Level 5" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Medium/MediumLevels/Level 6" to="LevelSelect/Levels/Difficulties/Medium/MediumLevels/Level 6" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Medium/MediumLevels/Level 7" to="LevelSelect/Levels/Difficulties/Medium/MediumLevels/Level 7" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Medium/MediumLevels/Level 8" to="LevelSelect/Levels/Difficulties/Medium/MediumLevels/Level 8" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Hard/HardLevels/Level 9" to="LevelSelect/Levels/Difficulties/Hard/HardLevels/Level 9" method="_on_pressed"]
+[connection signal="pressed" from="LevelSelect/Levels/Difficulties/Hard/HardLevels/Level 10" to="LevelSelect/Levels/Difficulties/Hard/HardLevels/Level 10" method="_on_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/RestartLevelButton" to="PauseMenu" method="_on_restart_level_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/LevelSelectButton" to="PauseMenu" method="_on_level_select_button_pressed"]
