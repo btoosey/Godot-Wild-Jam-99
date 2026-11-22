@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Godot Wild Jam 99"
+config/name="Art Block"
 run/main_scene="uid://o68vvm5373p4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/icon/icon.svg"
