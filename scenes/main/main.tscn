@@ -5,12 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://bihqm1ntlmqo1" path="res://scenes/levels/level001.tscn" id="2_hujxm"]
 [ext_resource type="Script" uid="uid://b4au8pmkhwese" path="res://scripts/state_machines/game_state_machine/game_states/main_menu_state.gd" id="2_iuonh"]
 [ext_resource type="Script" uid="uid://dcfr33b6je7d4" path="res://scripts/ui/main_menu/main_menu.gd" id="2_l3cfh"]
+[ext_resource type="AudioStream" uid="uid://b0df5sx87unjm" path="res://assets/music/andriig-background-music-background-604062.mp3" id="2_s17dp"]
 [ext_resource type="Script" uid="uid://ss022f3gt6p5" path="res://scripts/state_machines/game_state_machine/game_states/play_state.gd" id="4_6q06x"]
 [ext_resource type="Script" uid="uid://cww0pxt05pcfr" path="res://scripts/state_machines/game_state_machine/game_states/level_select_state.gd" id="4_yyfjg"]
 [ext_resource type="Script" uid="uid://b2j0u8g8idf04" path="res://scripts/ui/pause_menu/pause_menu.gd" id="6_ow5a4"]
 [ext_resource type="Script" uid="uid://d01ipy7dw2w4i" path="res://scripts/ui/level_select_menu/level_select_buttons/level_select_button.gd" id="7_b1x3f"]
+[ext_resource type="Material" uid="uid://cfiqp4rt6dxjb" path="res://data/shaders/bg_scroll.tres" id="7_m4h2d"]
 [ext_resource type="Script" uid="uid://b07jkr7vpvqsk" path="res://scripts/ui/level_select_menu/level_select.gd" id="7_ouso4"]
+[ext_resource type="Texture2D" uid="uid://d2nlojrur14yr" path="res://assets/background/bg_tile.png" id="8_p8abn"]
 [ext_resource type="Script" uid="uid://dhlt88aijwr56" path="res://scripts/custom_nodes/level_loader_reloader.gd" id="8_yyfjg"]
+[ext_resource type="Texture2D" uid="uid://ceeqpaw6h802w" path="res://assets/main_menu/title.png" id="9_p8abn"]
 [ext_resource type="PackedScene" uid="uid://dehdegn4yyg7m" path="res://scenes/levels/level002.tscn" id="10_raeie"]
 [ext_resource type="PackedScene" uid="uid://blrawsxerjcv3" path="res://scenes/levels/level003.tscn" id="11_hxu8e"]
 [ext_resource type="PackedScene" uid="uid://cvrway2afc1j8" path="res://scenes/levels/level004.tscn" id="12_nvumn"]
@@ -21,16 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://db46p2oxb5ohe" path="res://scenes/levels/level009.tscn" id="17_necax"]
 [ext_resource type="PackedScene" uid="uid://20nt06fbldr5" path="res://scenes/levels/level010.tscn" id="18_r4lks"]
 
-[sub_resource type="Gradient" id="Gradient_ecg72"]
-colors = PackedColorArray(0.6127906, 0.4126015, 0.42459592, 1, 0.3760335, 0.4925661, 0.7094867, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cj01r"]
-gradient = SubResource("Gradient_ecg72")
-fill_from = Vector2(0.33913043, 0.06521739)
-fill_to = Vector2(0.7173913, 0.92608696)
-
 [node name="Main" type="Node" unique_id=1911867851]
 script = ExtResource("1_k2fmo")
+main_music_stream = ExtResource("2_s17dp")
 
 [node name="Level" type="Node2D" parent="." unique_id=1758344986]
 
@@ -54,12 +51,25 @@ unique_name_in_owner = true
 script = ExtResource("2_l3cfh")
 
 [node name="Background" type="TextureRect" parent="MainMenu" unique_id=1145910525]
+material = ExtResource("7_m4h2d")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_cj01r")
+texture = ExtResource("8_p8abn")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=306283567]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -207.5
+offset_top = 72.0
+offset_right = 207.5
+offset_bottom = 306.0
+grow_horizontal = 2
+texture = ExtResource("9_p8abn")
 
 [node name="Title" type="Label" parent="MainMenu" unique_id=893177840]
 anchors_preset = 8
@@ -68,13 +78,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -207.5
-offset_top = -127.0
+offset_top = -33.5
 offset_right = 207.5
-offset_bottom = -17.0
+offset_bottom = 81.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.14767182, 0.14767179, 0.14767179, 1)
 theme_override_font_sizes/font_size = 80
-text = "Game Title"
+text = "BLOCK"
+horizontal_alignment = 1
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="MainMenu" unique_id=226532878]
 custom_minimum_size = Vector2(200, 0)
@@ -83,10 +95,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = 16.0
-offset_right = 48.0
-offset_bottom = 82.0
+offset_left = -100.0
+offset_top = 123.0
+offset_right = 100.0
+offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
@@ -95,14 +107,20 @@ theme_override_constants/separation = 12
 layout_mode = 2
 text = "Start Game"
 
-[node name="Settings" type="Button" parent="MainMenu/MainMenuButtons" unique_id=2146701926]
-layout_mode = 2
-text = "Settings"
-
 [node name="LevelSelect" type="CanvasLayer" parent="." unique_id=2112610149]
 unique_name_in_owner = true
 visible = false
 script = ExtResource("7_ouso4")
+
+[node name="Background" type="TextureRect" parent="LevelSelect" unique_id=872146537]
+material = ExtResource("7_m4h2d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_p8abn")
+stretch_mode = 1
 
 [node name="Levels" type="VBoxContainer" parent="LevelSelect" unique_id=536352581]
 anchors_preset = 8
@@ -118,23 +136,32 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 24
 
 [node name="Label" type="Label" parent="LevelSelect/Levels" unique_id=55819264]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.2231029, 0.2231029, 0.22310287, 1)
+theme_override_font_sizes/font_size = 48
 text = "Choose a level"
 
 [node name="Difficulties" type="HBoxContainer" parent="LevelSelect/Levels" unique_id=244345872]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 16
 
 [node name="Easy" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=181954482]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Easy" unique_id=271184574]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.87058824, 0.21176471, 0.15294118, 1)
+theme_override_font_sizes/font_size = 24
 text = "Easy"
 
 [node name="EasyLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Easy" unique_id=1886944100]
@@ -176,10 +203,14 @@ level_scene = ExtResource("13_ou6is")
 
 [node name="Medium" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=804535895]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Medium" unique_id=1139271354]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.827451, 0.16470589, 1)
+theme_override_font_sizes/font_size = 24
 text = "Medium"
 
 [node name="MediumLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Medium" unique_id=1627309505]
@@ -208,10 +239,14 @@ level_scene = ExtResource("16_ou6is")
 
 [node name="Hard" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties" unique_id=1211632039]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="LevelSelect/Levels/Difficulties/Hard" unique_id=1627844714]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.36862746, 0.8980392, 1)
+theme_override_font_sizes/font_size = 24
 text = "Hard"
 
 [node name="HardLevels" type="VBoxContainer" parent="LevelSelect/Levels/Difficulties/Hard" unique_id=41498323]
@@ -237,12 +272,15 @@ process_mode = 3
 visible = false
 script = ExtResource("6_ow5a4")
 
-[node name="Panel" type="Panel" parent="PauseMenu" unique_id=1386804991]
+[node name="Background" type="TextureRect" parent="PauseMenu" unique_id=618649887]
+material = ExtResource("7_m4h2d")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("8_p8abn")
+stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu" unique_id=1511921344]
 anchors_preset = 8

@@ -3,10 +3,16 @@
 [ext_resource type="Script" uid="uid://d04jak1mjbxv5" path="res://scripts/components/paintbrush/orbiter_component.gd" id="1_cunj8"]
 [ext_resource type="Script" uid="uid://7342oojnfrt2" path="res://scenes/paintbrush/paintbrush.gd" id="1_y05g2"]
 [ext_resource type="Texture2D" uid="uid://n836x4yv7khl" path="res://assets/tilemaps/paintbrush/paintbrush.png" id="2_4dnrm"]
+[ext_resource type="AudioStream" uid="uid://btpm2353vf6c2" path="res://assets/sfx/creatorshome-pop-cartoon-328167.mp3" id="2_ikrpj"]
+[ext_resource type="AudioStream" uid="uid://dsncgtqgwujyd" path="res://assets/sfx/universfield-bubble-pop-03-320977.mp3" id="3_gffck"]
 [ext_resource type="Script" uid="uid://deod6ldc4livn" path="res://scenes/paintbrush/palette.gd" id="3_iig8r"]
+[ext_resource type="AudioStream" uid="uid://nnbbgolpj7hh" path="res://assets/sfx/floraphonic-classic-game-action-negative-18-224576.mp3" id="4_l3sh4"]
 
 [node name="Paintbrush" type="Node2D" unique_id=677155198]
 script = ExtResource("1_y05g2")
+paint_sfx = ExtResource("2_ikrpj")
+erase_sfx = ExtResource("3_gffck")
+wrong_sfx = ExtResource("4_l3sh4")
 
 [node name="Visuals" type="CanvasGroup" parent="." unique_id=381405899]
 position = Vector2(0, -11)
