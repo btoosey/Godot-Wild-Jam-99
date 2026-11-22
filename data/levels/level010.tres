@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://c3xqy4h1obrhd"]
+
+[ext_resource type="Script" uid="uid://3ue5187mmswp" path="res://data/levels/level_data.gd" id="1_iu2wa"]
+
+[resource]
+script = ExtResource("1_iu2wa")
+solution = Dictionary[Vector2i, int]({
+Vector2i(12, 11): 6,
+Vector2i(12, 13): 4,
+Vector2i(13, 8): 3,
+Vector2i(13, 9): 5,
+Vector2i(13, 10): 6,
+Vector2i(13, 11): 3,
+Vector2i(13, 12): 6,
+Vector2i(13, 13): 6,
+Vector2i(13, 15): 1,
+Vector2i(14, 6): 2,
+Vector2i(14, 7): 6,
+Vector2i(14, 8): 6,
+Vector2i(14, 9): 3,
+Vector2i(14, 10): 6,
+Vector2i(14, 11): 4,
+Vector2i(14, 12): 3,
+Vector2i(14, 13): 6,
+Vector2i(14, 14): 7,
+Vector2i(14, 15): 7,
+Vector2i(15, 9): 3,
+Vector2i(15, 10): 6,
+Vector2i(15, 11): 6,
+Vector2i(15, 12): 3,
+Vector2i(15, 13): 6,
+Vector2i(15, 15): 1,
+Vector2i(16, 11): 5,
+Vector2i(16, 13): 6
+})
+metadata/_custom_type_script = "uid://3ue5187mmswp"
