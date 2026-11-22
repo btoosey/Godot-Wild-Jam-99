@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://m828vvx8td7a"]
+
+[ext_resource type="Script" uid="uid://3ue5187mmswp" path="res://data/levels/level_data.gd" id="1_as0lx"]
+[ext_resource type="PackedScene" uid="uid://bxp3v8kqgbgf" path="res://scenes/levels/level007.tscn" id="1_ejjfb"]
+
+[resource]
+script = ExtResource("1_as0lx")
+next_level = ExtResource("1_ejjfb")
+solution = Dictionary[Vector2i, int]({
+Vector2i(13, 7): 2,
+Vector2i(13, 8): 2,
+Vector2i(13, 9): 2,
+Vector2i(14, 6): 2,
+Vector2i(14, 7): 6,
+Vector2i(14, 8): 2,
+Vector2i(14, 9): 3,
+Vector2i(14, 10): 2,
+Vector2i(15, 6): 2,
+Vector2i(15, 7): 2,
+Vector2i(15, 8): 2,
+Vector2i(15, 9): 3,
+Vector2i(15, 10): 2,
+Vector2i(16, 6): 2,
+Vector2i(16, 7): 6,
+Vector2i(16, 8): 2,
+Vector2i(16, 9): 3,
+Vector2i(16, 10): 2,
+Vector2i(17, 7): 2,
+Vector2i(17, 8): 2,
+Vector2i(17, 9): 2
+})
+metadata/_custom_type_script = "uid://3ue5187mmswp"
